@@ -1,0 +1,104 @@
+/* src/components/Sidebar/Sidebar.module.scss */
+@use '../../styles/variables' as v;
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: v.$white;
+  border-right: 1px solid v.$light-gray;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: v.$conservation-green;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: -1px;
+  }
+
+  .nav {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  .accordionHeader {
+    cursor: pointer;
+    padding: 0.75rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: v.$dark-gray;
+    user-select: none;
+
+    .icon {
+      transition: transform 0.2s ease;
+    }
+
+    &.expanded .icon {
+      transform: rotate(90deg);
+    }
+  }
+
+  .accordionContent {
+    padding-left: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+
+    &.expanded {
+      max-height: 500px; /* Adjust as needed */
+      transition: max-height 0.5s ease-in;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0;
+    }
+
+    li {
+      padding: 0.5rem 0;
+      cursor: pointer;
+      color: v.$dark-gray;
+      &:hover {
+        color: v.$conservation-green;
+      }
+    }
+  }
+
+  .sellButton {
+    width: 100%;
+    padding: 1rem;
+    background-color: v.$conservation-green;
+    color: v.$white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: v.$dark-green;
+    }
+  }
+}
+
+/* Mobile Responsive: Hide the sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* The sidebar is hidden on mobile. */
+    /* A separate bottom-nav component would be conditionally rendered for mobile navigation. */
+  }
+}
+
+/* A class to hide the sidebar when a burger menu is used */
+.sidebarHidden {
+    transform: translateX(-100%);
+}

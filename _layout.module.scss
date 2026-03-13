@@ -1,0 +1,25 @@
+/* src/styles/_layout.module.scss */
+
+.appContainer {
+  display: grid;
+  grid-template-columns: 280px 1fr; /* Sidebar width and the rest of the space */
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+}
+
+@media (max-width: 768px) {
+  .appContainer {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-areas:
+      "header"
+      "main";
+    padding-bottom: 60px; /* Space for the bottom nav */
+  }
+}

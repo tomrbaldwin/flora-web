@@ -1,0 +1,80 @@
+/* src/components/Header/Header.module.scss */
+@use '../../styles/variables' as v;
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background-color: v.$white;
+  border-bottom: 1px solid v.$light-gray;
+  height: 70px;
+  gap: 1.5rem;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: v.$light-gray;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  flex-grow: 1;
+  max-width: 500px;
+
+  .searchIcon {
+    color: v.$medium-gray;
+    margin-right: 0.75rem;
+    font-size: 1.2rem; // Placeholder for icon size
+  }
+
+  .searchInput {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: v.$dark-gray;
+  }
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobileFilterButton {
+  display: none; // Hidden by default
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: v.$conservation-green;
+  color: v.$white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive Breakpoint for Mobile */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .filters {
+    display: none; // Hide the full filters on mobile
+  }
+
+  .mobileFilterButton {
+    display: inline-flex; // Show the single filter button on mobile
+    padding: 0.6rem;
+    font-size: 1.2rem;
+  }
+}
