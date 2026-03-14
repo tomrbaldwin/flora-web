@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
 import layoutStyles from "./styles/_layout.module.scss";
-import MainView from "./components/Mainview/MainView";
+import MainView from "./components/MainView/MainView";
 import { usePlants } from "./hooks/usePlants";
 
 function App() {
@@ -33,9 +33,9 @@ function App() {
 
   return (
     <div className={layoutStyles.appContainer}>
-      <Sidebar />
-      <Header />
-      <MainView plants={plants} />
+      <Sidebar className={layoutStyles.sidebar} />
+      <Header className={layoutStyles.header} />
+      <MainView plants={plants} className={layoutStyles.main} />
     </div>
   );
 }

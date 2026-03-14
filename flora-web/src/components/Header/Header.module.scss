@@ -1,15 +1,12 @@
 /* src/components/Header/Header.module.scss */
 @use '../../styles/variables' as v;
-
 .header {
-  grid-area: header;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5rem;
   background-color: v.$white;
   border-bottom: 1px solid v.$light-gray;
-  height: 70px;
   gap: 1.5rem;
 }
 
@@ -53,7 +50,7 @@
   height: 40px;
   border-radius: 50%;
   background-color: v.$conservation-green;
-  color: v.$white;
+//   color: v.$white;
   display: flex;
   align-items: center;
   justify-content: center;

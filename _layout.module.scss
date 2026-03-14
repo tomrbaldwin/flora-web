@@ -12,6 +12,15 @@
 
 .header {
   grid-area: header;
+  height: 70px; /* Define the header's height in the main layout file */
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
 }
 
 @media (max-width: 768px) {

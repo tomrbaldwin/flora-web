@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import styles from "./Header.module.scss";
-import Button from "./Button/Button";
+import Button from "../Button/Button";
 
-const Header = () => {
+interface HeaderProps {
+  className?: string;
+}
+
+const Header = ({ className }: HeaderProps) => {
   const [activeFilter, setActiveFilter] = useState("Outdoor");
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${className || ""}`.trim()}>
       {/* Search Input */}
       <div className={styles.searchContainer}>
         <span className={styles.searchIcon}>⌕</span> {/* Placeholder icon */}

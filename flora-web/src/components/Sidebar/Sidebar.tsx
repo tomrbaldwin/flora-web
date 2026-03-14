@@ -29,7 +29,11 @@ const AccordionItem = ({
   );
 };
 
-const Sidebar = () => {
+interface SidebarProps {
+  className?: string;
+}
+
+const Sidebar = ({ className }: SidebarProps) => {
   // Data for the navigation can be hardcoded for now or fetched from an API later
   const plantCategories = ["Cacti", "Climbing", "Edible", "Flowers", "Trees"];
   const filterOptions = {
@@ -40,7 +44,7 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${className || ""}`.trim()}>
       <div className={styles.logo}>flora</div>
 
       <nav className={styles.nav}>

@@ -1,5 +1,5 @@
 import { supabase } from './supabaseClient';
-import { Species } from '../models/types';
+import type { Species } from '../models/types';
 
 /**
  * Searches the canonical `species` table for plants matching a query.

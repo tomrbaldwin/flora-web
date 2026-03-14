@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Button.module.scss";
 
 interface ButtonProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: () => void;
   isActive?: boolean;
   icon?: React.ReactNode;

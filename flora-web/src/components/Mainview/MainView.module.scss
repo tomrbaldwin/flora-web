@@ -1,0 +1,7 @@
+/* src/components/MainView/MainView.module.scss */
+
+.main {
+  grid-area: main;
+  overflow-y: auto; /* Allows the main content to scroll independently */
+  padding: 1.5rem;
+}

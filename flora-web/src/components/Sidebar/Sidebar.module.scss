@@ -2,13 +2,11 @@
 @use '../../styles/variables' as v;
 
 .sidebar {
-  grid-area: sidebar;
   background-color: v.$white;
   border-right: 1px solid v.$light-gray;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 
   .logo {
